@@ -1,0 +1,120 @@
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+			border-radius: $radius;
+}
+@mixin perspective($amount) {
+			perspective: $amount;
+	-webkit-perspective: $amount;
+}
+@mixin perspective-origin($x, $y) {
+			perspective-origin: $x $y;
+	-webkit-perspective-origin: $x $y;
+}
+@mixin rotate($axis, $deg) {
+			transform: rotate#{$axis + "(" + $deg + ")"};
+	-webkit-transform: rotate#{$axis + "(" + $deg + ")"};
+}
+@mixin translate($axis, $deg) {
+			transform: translate#{$axis + "(" + $deg + ")"};
+	-webkit-transform: translate#{$axis + "(" + $deg + ")"};
+}
+
+#dock-container {
+	width: 100%;
+	height: 130px;
+	position: fixed;
+	bottom: 20px;
+	text-align: center;
+			transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	@include perspective(500px);
+	.dock {
+		@include perspective(500px);
+		@include rotate(X, 30deg);
+		.top, .side {
+		width: 80%;
+		margin: 0 auto;
+		}
+		.top {
+			position: relative;
+			height: 60px;
+			background-image: -o-linear-gradient(-90deg, #8A8A8A 0%, #CCCCCC 97%, #FFFFFF 100%);
+			background-image: -moz-linear-gradient(-90deg, #8A8A8A 0%, #CCCCCC 97%, #FFFFFF 100%);
+			background-image: -webkit-linear-gradient(-90deg, #8A8A8A 0%, #CCCCCC 97%, #FFFFFF 100%);
+			background-image: -ms-linear-gradient(-90deg, #8A8A8A 0%, #CCCCCC 97%, #FFFFFF 100%);
+			background-image: linear-gradient(-180deg, #8A8A8A 0%, #CCCCCC 97%, #FFFFFF 100%);
+			z-index: 2;
+			@include border-radius(6px);
+		}
+		.side {
+			height: 10px;
+			background-color: #909090;
+			z-index: 1;
+			-webkit-border-bottom-right-radius: 4px;
+			-webkit-border-bottom-left-radius: 4px;
+			-moz-border-radius-bottomright: 4px;
+			-moz-border-radius-bottomleft: 4px;
+			border-bottom-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+					transform: rotateX(-30deg) translateZ(-4px);
+			-webkit-transform: rotateX(-30deg) translateZ(-4px);
+			position: relative;
+			top: -1px;
+		}
+	}
+	.app-container {
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+		.app {
+			height: 60px;
+			width: 60px;
+			background-color: red;
+			display: inline-block;
+		}
+	}
+}
+
+body {
+	background: url(../img/bg-min.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#debug {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100px;
+	width: 100px;
+	color: white;
+	background-color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
