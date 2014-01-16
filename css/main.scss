@@ -20,22 +20,30 @@
 			transform: translate#{$axis + "(" + $deg + ")"};
 	-webkit-transform: translate#{$axis + "(" + $deg + ")"};
 }
+@mixin transition($prop, $duration, $easing, $delay:0) {
+			transition: $prop $duration $easing $delay;
+	-webkit-transition: $prop $duration $easing $delay;
+}
 
 #dock-container {
-	width: 100%;
-	height: 130px;
+	height: 134px;
 	position: fixed;
-	bottom: 20px;
+	bottom: 134px;
 	text-align: center;
+	width: 100%;
 			transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	@include perspective(500px);
+	.dock-inner-container {
+		display: inline-block;
+		min-width: 20%;
+	}
 	.dock {
 		@include perspective(500px);
-		@include rotate(X, 30deg);
+		@include rotate(X, 40deg);
 		.top, .side {
-		width: 80%;
-		margin: 0 auto;
+		// width: 80%;
+		// margin: 0 auto;
 		}
 		.top {
 			position: relative;
@@ -49,7 +57,7 @@
 			@include border-radius(6px);
 		}
 		.side {
-			height: 10px;
+			height: 14px;
 			background-color: #909090;
 			z-index: 1;
 			-webkit-border-bottom-right-radius: 4px;
@@ -58,21 +66,26 @@
 			-moz-border-radius-bottomleft: 4px;
 			border-bottom-right-radius: 4px;
 			border-bottom-left-radius: 4px;
-					transform: rotateX(-30deg) translateZ(-4px);
-			-webkit-transform: rotateX(-30deg) translateZ(-4px);
+			@include perspective(500px);
+					transform: rotateX(-40deg) translateZ(-6px);
+			-webkit-transform: rotateX(-40deg) translateZ(-6px);
 			position: relative;
 			top: -1px;
 		}
 	}
 	.app-container {
-		width: 80%;
-		margin: 0 auto;
 		text-align: center;
+		height: 120px;
+		display: table-cell;
+		vertical-align: bottom;
+		font-size: 0;
 		.app {
 			height: 60px;
 			width: 60px;
 			background-color: red;
 			display: inline-block;
+			margin: 0 6px;
+			// @include transition(height, 0.1s, ease-out);
 		}
 	}
 }
@@ -93,6 +106,7 @@ body {
 	width: 100px;
 	color: white;
 	background-color: orange;
+	overflow: hidden;
 }
 
 
