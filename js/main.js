@@ -17,21 +17,7 @@ $( '#dock-container' ).mousemove(function(e) {
 		var d = Math.abs(x-appCenter);
 
 		// set the number of pixels the animation will play over
-		var range = 240;
-
-		// scale
-		var scaleFactor = 1.5;
-		var scaleValue = (1-(d/range))*scaleFactor;
-	    if (scaleValue < 1) {
-	    	scaleValue = 1;
-	    }
-
-	    // margin
-	    var marginFactor = 30;
-	    var marginValue = (1-(d/range))*marginFactor;
-	    if (marginValue < 1) {
-	    	marginValue = 1;
-	    }
+		var range = 360;
 
 	    // height
 	    var heightFactor = 100;
@@ -59,14 +45,6 @@ $( '#dock-container' ).mousemove(function(e) {
 	    	width: Math.floor(widthValue) + 'px'
 	    });
 
-	    // appArray.eq(i).css({
-	    // 	transformOrigin: '50% 100%',
-	    // 	margin: '0 ' + marginValue + 'px',
-	    // }).stop().transition({ 
-	    // 	scale: scaleValue,
-	    // 	duration: 0
-	    // });
-
 	    $('#debug').html("d: " + d + "<br>marginValue: " + heightValue);
 	});
 
@@ -81,10 +59,13 @@ $( '#dock-container' ).mousemove(function(e) {
 // 	}
 // });
 
-// $('#dock-container').on({
-// 	mouseleave: function() {
-// 		appArray.each(function(i) {
-// 			appArray.eq(i).stop().transition({ scale: 1, margin: '0 0', duration: 100 });
-// 		});
-// 	}
-// });
+$('#dock-container').on({
+	mouseleave: function() {
+		appArray.each(function(i) {
+			appArray.eq(i).css({
+		    	height: appWidth + 'px',
+		    	width: appWidth + 'px'
+		    });
+		});
+	}
+});
