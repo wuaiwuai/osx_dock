@@ -1,6 +1,6 @@
 #dock-container {
   position: fixed;
-  bottom: 0;
+  bottom: -52px;
   text-align: center;
   width: 100%;
   -moz-transform-style: preserve-3d;
@@ -18,6 +18,7 @@
   height: 100%;
   width: 100%;
   position: relative;
+  bottom: 52px;
   -moz-perspective: 500px;
   -webkit-perspective: 500px;
   perspective: 500px;
@@ -57,7 +58,8 @@
   display: table-cell;
   vertical-align: bottom;
   font-size: 0;
-  padding: 0 10px;
+  padding: 0 10px 10px;
+  overflow: hidden;
 }
 #dock-container .app-container .app {
   height: 40px;
@@ -66,13 +68,31 @@
   margin: 0 2px;
   z-index: 4;
   position: relative;
-  top: 42px;
 }
 #dock-container .app-container .app img {
   max-width: 100%;
   display: block;
   margin: 0;
   padding: 0;
+  position: relative;
+  z-index: 4;
+}
+#dock-container .app-container .app .shadow {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  position: relative;
+  bottom: 10px;
+  z-index: 3;
+  clip: rect(0, 90px, 100px, 0);
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  /* For IE8 and earlier */
 }
 #dock-container .app-container .divider {
   display: inline-block;
@@ -85,7 +105,7 @@
   -webkit-transform: rotate(-24deg);
   transform: rotate(-24deg);
   position: relative;
-  top: 47px;
+  top: 6px;
 }
 
 body {
