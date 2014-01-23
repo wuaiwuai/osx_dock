@@ -35,9 +35,8 @@
 }
 
 #dock-container {
-	height: 136px;
 	position: fixed;
-	bottom: 60px;
+	bottom: 0;
 	text-align: center;
 	width: 100%;
 	   -moz-transform-style: preserve-3d;
@@ -49,12 +48,11 @@
 		@include perspective(500px);
 	}
 	.dock {
+		height: 100%;
+		width: 100%;
+		position: relative;
 		@include perspective(500px);
 		@include rotate(X, 50deg);
-		.top, .side {
-		// width: 80%;
-		// margin: 0 auto;
-		}
 		.top {
 			position: relative;
 			height: 60px;
@@ -74,7 +72,6 @@
 			-webkit-border-bottom-left-radius: 5px;
 			border-bottom-right-radius: 5px;
 			border-bottom-left-radius: 5px;
-			@include perspective(500px);
 			   -moz-transform: rotateX(-45deg) translateZ(-7px);
 			-webkit-transform: rotateX(-45deg) translateZ(-7px);
 					transform: rotateX(-45deg) translateZ(-7px);
@@ -88,16 +85,16 @@
 		display: table-cell;
 		vertical-align: bottom;
 		font-size: 0;
-		padding: 0 30px;
+		padding: 0 10px;
 		.app {
 			height: 40px;
 			width: 40px;
 			display: inline-block;
 			margin: 0 2px;
-			// @include transition(height, 0.1s, ease-out);
+			z-index: 4;
 			position: relative;
 			top: 42px;
-			z-index: 4;
+			// @include transition(height, 0.1s, ease-out);
 			img {
 				max-width: 100%;
 				display: block;
@@ -107,14 +104,16 @@
 		}
 		.divider {
 			display: inline-block;
-			margin: 0 2px;
-			position: relative;
-			top: 52px;
+			margin: 0 8px;
 			z-index: 4;
-			height: 40px;
+			height: 30px;
 			width: 1px;
-			background-color: rgba(100,100,100,0.5);
-			@include rotate(X, 50deg);
+			background-color: rgba(115,115,115,0.5);
+				-ms-transform: rotate(-24deg);
+			-webkit-transform: rotate(-24deg);
+					transform: rotate(-24deg);
+			position: relative;
+			top: 47px;
 		}
 	}
 }
