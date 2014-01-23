@@ -92,14 +92,29 @@
 		.app {
 			height: 40px;
 			width: 40px;
-			background-color: red;
 			display: inline-block;
-			margin: 0 6px;
+			margin: 0 2px;
 			// @include transition(height, 0.1s, ease-out);
 			position: relative;
-			top: 40px;
+			top: 42px;
 			z-index: 4;
-			@include box-shadow(0, 2px, 2px, rgba(0,0,0,0.5));
+			img {
+				max-width: 100%;
+				display: block;
+				margin: 0;
+				padding: 0;
+			}
+		}
+		.divider {
+			display: inline-block;
+			margin: 0 2px;
+			position: relative;
+			top: 52px;
+			z-index: 4;
+			height: 40px;
+			width: 1px;
+			background-color: rgba(100,100,100,0.5);
+			@include rotate(X, 50deg);
 		}
 	}
 }
