@@ -2,26 +2,34 @@
 // get width, position, and center point of each app
 var appArray = $('.app');
 var appWidth = $('.app').width();
+var appHeight = $('.app').width();
 
 // get screen width
 var windowWidth = $(window).width();
 
 $( '#dock-container' ).mousemove(function(e) {
 	var x = e.pageX - this.offsetLeft;
+	var y = e.pageY - this.offsetTop;
 
     appArray.each(function(i) {
-		var appPos = appArray.eq(i).position().left;
-		var appCenter = appPos + (appWidth*.5);
+		var appLeftPos = appArray.eq(i).position().left;
+		var appHorizontalCenter = appLeftPos + (appWidth*.5);
 
-		// get distance from App icon
-		var d = Math.abs(x-appCenter);
+		var appTopPos = appArray.eq(i).position().top;
+		var appVerticalCenter = appTopPos + (appHeight*.5);
+
+		// get horizontal distance from App icon
+		var xd = Math.abs(x-appHorizontalCenter);
+
+		// get vertical distance from App icon
+		var yd = Math.abs(y-appVerticalCenter);
 
 		// set the number of pixels the animation will play over
 		var range = 360;
 
 	    // height
 	    var heightFactor = 100;
-	    var heightValue = (1-(d/range))*heightFactor;
+	    var heightValue = (1-(xd/range))*heightFactor;
 	    if (heightValue > 90) {
 	    	heightValue = 90;
 	    }
@@ -31,7 +39,7 @@ $( '#dock-container' ).mousemove(function(e) {
 
 	    // width
 	    var widthFactor = 100;
-	    var widthValue = (1-(d/range))*widthFactor;
+	    var widthValue = (1-(xd/range))*widthFactor;
 	    if (widthValue > 90) {
 	    	widthValue = 90;
 	    }
@@ -45,7 +53,7 @@ $( '#dock-container' ).mousemove(function(e) {
 	    	width: Math.floor(widthValue) + 'px'
 	    });
 
-	    $('#debug').html("d: " + d + "<br>marginValue: " + heightValue);
+	    $('#debug').html("y: " + y + "yd: " + yd);
 	});
 
 });
