@@ -93,7 +93,7 @@
 	}
 	.app-container {
 		text-align: center;
-		height: 140px;
+		height: 136px;
 		display: table-cell;
 		vertical-align: bottom;
 		font-size: 0;
@@ -109,8 +109,9 @@
 			float: left;
 			position: absolute;
 			top: 0px;
-			width: 150px;
-			margin-left: -26px;
+			width: 160px;
+			margin-left: -31px;
+			letter-spacing: 0.5px;
 			display: none;
 			span {
 				background-color: rgba(25,25,25,0.5);
@@ -126,7 +127,6 @@
 			margin: 0 2px;
 			z-index: 4;
 			position: relative;
-			// top: 42px;
 			// @include transition(height, 0.1s, ease-out);
 			img {
 				max-width: 100%;

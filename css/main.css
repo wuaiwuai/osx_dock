@@ -54,7 +54,7 @@
 }
 #dock-container .app-container {
   text-align: center;
-  height: 140px;
+  height: 136px;
   display: table-cell;
   vertical-align: bottom;
   font-size: 0;
@@ -71,8 +71,9 @@
   float: left;
   position: absolute;
   top: 0px;
-  width: 150px;
-  margin-left: -26px;
+  width: 160px;
+  margin-left: -31px;
+  letter-spacing: 0.5px;
   display: none;
 }
 #dock-container .app-container .title span {
