@@ -29,18 +29,18 @@
 #dock-container .dock .top {
   position: relative;
   height: 60px;
-  background-image: -o-linear-gradient(-90deg, #8a8a8a 0%, #cccccc 97%, white 100%);
-  background-image: -moz-linear-gradient(-90deg, #8a8a8a 0%, #cccccc 97%, white 100%);
-  background-image: -webkit-linear-gradient(-90deg, #8a8a8a 0%, #cccccc 97%, white 100%);
-  background-image: -ms-linear-gradient(-90deg, #8a8a8a 0%, #cccccc 97%, white 100%);
-  background-image: linear-gradient(-180deg, #8a8a8a 0%, #cccccc 97%, white 100%);
+  background-image: -o-linear-gradient(-90deg, #74667f 0%, #c5bdcc 97%, white 100%);
+  background-image: -moz-linear-gradient(-90deg, #74667f 0%, #c5bdcc 97%, white 100%);
+  background-image: -webkit-linear-gradient(-90deg, #74667f 0%, #c5bdcc 97%, white 100%);
+  background-image: -ms-linear-gradient(-90deg, #74667f 0%, #c5bdcc 97%, white 100%);
+  background-image: linear-gradient(-180deg, #74667f 0%, #c5bdcc 97%, white 100%);
   z-index: 2;
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
 #dock-container .dock .side {
   height: 16px;
-  background-color: #909090;
+  background-color: #8c8990;
   z-index: 1;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -82,16 +82,16 @@
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   position: relative;
-  bottom: 10px;
+  bottom: 3px;
   z-index: 3;
   clip: rect(0, 90px, 100px, 0);
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  -o-filter: blur(2px);
-  -ms-filter: blur(2px);
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  opacity: 0.3;
+  filter: alpha(opacity=30);
   /* For IE8 and earlier */
 }
 #dock-container .app-container .divider {
