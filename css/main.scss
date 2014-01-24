@@ -93,12 +93,32 @@
 	}
 	.app-container {
 		text-align: center;
-		height: 120px;
+		height: 140px;
 		display: table-cell;
 		vertical-align: bottom;
 		font-size: 0;
 		padding: 0 10px 10px;
 		overflow: hidden;
+		.app-inner-container {
+			display: inline-block;
+		}
+		.title {
+			font-size: 12px;
+			font-family: 'Lucida Grande', sans-serif;
+			color: white;
+			float: left;
+			position: absolute;
+			top: 0px;
+			width: 150px;
+			margin-left: -26px;
+			display: none;
+			span {
+				background-color: rgba(25,25,25,0.5);
+				display: inline-block;
+				padding: 2px 8px;
+				@include border-radius(20px);
+			}
+		}
 		.app {
 			height: 40px;
 			width: 40px;

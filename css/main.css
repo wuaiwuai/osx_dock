@@ -54,12 +54,33 @@
 }
 #dock-container .app-container {
   text-align: center;
-  height: 120px;
+  height: 140px;
   display: table-cell;
   vertical-align: bottom;
   font-size: 0;
   padding: 0 10px 10px;
   overflow: hidden;
+}
+#dock-container .app-container .app-inner-container {
+  display: inline-block;
+}
+#dock-container .app-container .title {
+  font-size: 12px;
+  font-family: 'Lucida Grande', sans-serif;
+  color: white;
+  float: left;
+  position: absolute;
+  top: 0px;
+  width: 150px;
+  margin-left: -26px;
+  display: none;
+}
+#dock-container .app-container .title span {
+  background-color: rgba(25, 25, 25, 0.5);
+  display: inline-block;
+  padding: 2px 8px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
 }
 #dock-container .app-container .app {
   height: 40px;

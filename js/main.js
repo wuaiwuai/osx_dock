@@ -50,6 +50,15 @@ $( '#dock-container' ).mousemove(function(e) {
 
 });
 
+$('.app-inner-container').on({
+	mouseenter: function() {
+		$(this).children('.title').show();
+	},
+	mouseleave: function() {
+		$(this).children('.title').hide();
+	}
+});
+
 // $('#dock-container').on({
 // 	mouseenter: function() {
 // 		$('.dock-inner-container').transition({ 'min-width': '40%' });
